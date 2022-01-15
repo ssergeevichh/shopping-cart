@@ -1,0 +1,33 @@
+.menu {
+    left: 0;
+    top: 0;
+    background-color: #46464e;
+    display: flex;
+    padding: 10px 0;
+
+    &__container {
+        margin: 0 auto;
+        width: 1250px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+}
+
+.menu-icons {
+    display: flex;
+    justify-content: space-between;
+    width: 100px;
+    &__item {
+        transition: all .2s;
+        padding: 4px;
+        &:hover{
+            transition: all .5s;
+            border-radius: 10px;
+            background-color:seashell
+        }
+    }
+
+
+}
