@@ -17,8 +17,8 @@ function createProductItem(product) {
     const cartBtn = createElement('button', { className: 'btn add-to-cart', innerHTML: 'Add to cart' })
 
     cartBtn.addEventListener('click', function () {
-        createProductItem(product) //checkPoint
-        modalOL.appendChild(listItem)
+         //checkPoint
+        modalOL.appendChild(createModalCartItem(product))
     })
 
     item.appendChild(productContent)
