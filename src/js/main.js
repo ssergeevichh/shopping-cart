@@ -1,10 +1,13 @@
 import '../styles/style.scss'
+import { Cart } from './cart/controller';
 import { createProductItem } from './helper';
 import addEventListenersToCart from './modalHandler.js';
 import fetchProduct from './product.service.js';
 
 const url = 'https://fakestoreapi.com/products'
 const list = document.querySelector('.products')
+
+const cart = new Cart()
 
 
 fetchProduct(url).then(data => {
@@ -24,6 +27,7 @@ fetchProduct(url).then(data => {
 
 addEventListenersToCart() //for handle events connected with modal
 
-
-
+export { 
+  cart
+}
 

@@ -1,3 +1,5 @@
+import { cart } from "./main";
+
 let total = 0;
 function createElement(tag, props) {
     const element = document.createElement(tag)
@@ -22,6 +24,8 @@ function createProductItem(product) {
         const totalSum = document.querySelector('#total')
         total += product.price
         totalSum.innerHTML = 'total:' + total.toFixed(2)
+
+        cart.addItem(product) // TODO it should work
     })
 
     item.appendChild(productContent)
