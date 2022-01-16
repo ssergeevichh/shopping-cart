@@ -1,6 +1,6 @@
 import '../styles/style.scss'
 import { Cart } from './cart/controller';
-import { createProductItem } from './helper';
+import { createProductItem } from './helpers/index'
 import addEventListenersToCart from './modalHandler.js';
 import fetchProduct from './product.service.js';
 

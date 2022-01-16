@@ -1,4 +1,4 @@
-
+import { createModalCartItem } from "./html-helpers"
 export class Cart {
   cartItems = []
   total = 0
@@ -12,8 +12,17 @@ export class Cart {
 
   }
 
-  addItem(product){
-
+  addItem(product) {
+    const cartItem = {
+      id: product.id,
+      quantity: 1,
+      title: product.title,
+      price: product.price
+    }
+    const cartItemEl = createModalCartItem(cartItem)
+    const modalOL = document.querySelector('#modalOL')
+    modalOL.appendChild(cartItemEl)
+    this.cartItems.push(cartItem)
   }
 
   changeQuantity(id) {

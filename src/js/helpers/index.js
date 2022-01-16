@@ -1,13 +1,8 @@
-import { cart } from "./main";
+import { cart } from "../main";
+import createElement from "../helpers/createElement"
 
 let total = 0;
-function createElement(tag, props) {
-    const element = document.createElement(tag)
-    Object.keys(props).forEach(key => {
-        element[key] = props[key]
-    })
-    return element
-}
+
 function createProductItem(product) {
     const item = createElement('div', { className: 'products__item' });
     const productContent = createElement('div', { className: 'products__content' })
@@ -18,13 +13,6 @@ function createProductItem(product) {
     const productPrice = createElement('div', { className: 'products__price', innerHTML: product['price'] + '$' })
     const addToCart = createElement('button', { className: 'btn add-to-cart', innerHTML: 'Add to cart' })
     addToCart.addEventListener('click', function () {
-        const modalOL = document.querySelector('#modalOL')
-        modalOL.appendChild(createModalCartItem(product))
-
-        const totalSum = document.querySelector('#total')
-        total += product.price
-        totalSum.innerHTML = 'total:' + total.toFixed(2)
-
         cart.addItem(product) // TODO it should work
     })
 
@@ -38,20 +26,7 @@ function createProductItem(product) {
 
     return item
 }
-function createModalCartItem(product) {
 
-    const cartItem = createElement('li', { className: 'modal-cart__item' })
-    const productTitle = createElement('div', { className: 'modal-cart__title', innerHTML: product.title })
-    const productQuantity = createElement('div', { className: 'modal-cart__quantity', innerHTML: 'quantity: ' })
-    const productInput = createElement('input', { className: 'modal-cart__input', type: 'number', value: 1 })
-    const productPrice = createElement('div', { className: 'modal-cart__price', innerHTML: 'price: ' + product.price })
-    cartItem.appendChild(productTitle)
-    cartItem.appendChild(productQuantity)
-    productQuantity.appendChild(productInput)
-    cartItem.appendChild(productPrice)
-
-    return cartItem
-}
 
 
 export { createProductItem }
