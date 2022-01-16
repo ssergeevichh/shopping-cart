@@ -21,7 +21,7 @@ function createProductItem(product) {
 
         const totalSum = document.querySelector('#total')
         total += product.price
-        totalSum.innerHTML = total.toFixed(2)
+        totalSum.innerHTML = 'total:' + total.toFixed(2)
     })
 
     item.appendChild(productContent)

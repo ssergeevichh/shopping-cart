@@ -1,4 +1,4 @@
-function modalListeners () {
+function addEventListenersToCart () {
     const modalOverlay = document.querySelector('.modal-overlay')
     const menuCartButton = document.querySelector('#cart')
     const exitButton = document.querySelector('#exit')
@@ -31,4 +31,4 @@ function modalListeners () {
 
 
 }
-export default modalListeners
+export default addEventListenersToCart

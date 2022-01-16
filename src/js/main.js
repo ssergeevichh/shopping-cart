@@ -1,6 +1,6 @@
 import '../styles/style.scss'
 import { createProductItem } from './helper';
-import modalListeners from './modalHandler.js';
+import addEventListenersToCart from './modalHandler.js';
 import fetchProduct from './product.service.js';
 
 const url = 'https://fakestoreapi.com/products'
@@ -22,7 +22,7 @@ fetchProduct(url).then(data => {
     newArray.forEach(product => list.appendChild(createProductItem(product)))
 })
 
-modalListeners() //for handle events connected with modal
+addEventListenersToCart() //for handle events connected with modal
 
 
 
