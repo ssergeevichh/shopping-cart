@@ -1,3 +1,4 @@
+// import { transformWithEsbuild } from "vite"
 import { createModalCartItem } from "./html-helpers"
 export class Cart {
   cartItems = []
@@ -19,10 +20,25 @@ export class Cart {
       title: product.title,
       price: product.price
     }
-    const cartItemEl = createModalCartItem(cartItem)
-    const modalOL = document.querySelector('#modalOL')
-    modalOL.appendChild(cartItemEl)
-    this.cartItems.push(cartItem)
+
+    let isExist = false;
+    let currentItem;
+
+    this.cartItems.forEach(item => {
+      if (item.id === cartItem.id) {
+        return currentItem = item, isExist = true, console.log(currentItem);
+      }
+    })
+
+    if (isExist) {
+      currentItem.quantity++
+    } else {
+      const cartItemEl = createModalCartItem(cartItem)
+      const modalOL = document.querySelector('#modalOL')
+      modalOL.appendChild(cartItemEl)
+      this.cartItems.push(cartItem)
+    }
+
   }
 
   changeQuantity(id) {
