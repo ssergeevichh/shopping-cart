@@ -4,9 +4,9 @@ import createElement from "../helpers/createElement"
 let total = 0;
 
 function createProductItem(product) {
-    const item = createElement('div', { className: 'products__item' });
+    const productItem = createElement('div', { className: 'products__item' });
     const productContent = createElement('div', { className: 'products__content' })
-    const img = createElement('img', { className: 'products__img', srcset: product['image'] })
+    const productImg = createElement('img', { className: 'products__img', srcset: product['image'] })
     const productsDescription = createElement('div', { className: 'products__descr', innerHTML: product['description'] })
     const productTitle = createElement('div', { className: 'products__title', innerHTML: product['title'] })
     const productSelling = createElement('div', { className: 'products__selling' })
@@ -17,14 +17,14 @@ function createProductItem(product) {
     })
 
     item.appendChild(productContent)
-    productContent.appendChild(img)
+    productContent.appendChild(productImg)
     productContent.appendChild(productTitle)
     productContent.appendChild(productsDescription)
     item.appendChild(productSelling)
     productSelling.appendChild(productPrice)
     productSelling.appendChild(addToCart)
 
-    return item
+    return productItem
 }
 
 
