@@ -1,7 +1,7 @@
 import createElement from "../helpers/createElement"
 export function createModalCartItem(cartItem) {
 
-    const cartItemEl = createElement('li', { className: 'modal-cart__item' })
+    const cartItemEl = createElement('li', { className: 'modal-cart__item', 'data-id': cartItem.id})
     const cartItemTitleEl = createElement('div', { className: 'modal-cart__title', innerHTML: cartItem.title })
     const productQuantityEl = createElement('div', { className: 'modal-cart__quantity', innerHTML: 'quantity: ' })
     const productInputEl = createElement('input', { className: 'modal-cart__input', type: 'number', value: 1 })
@@ -14,7 +14,14 @@ export function createModalCartItem(cartItem) {
     return cartItemEl
 }
 
+export function editModalCartItemQuantity (currentId,cartItem){
+    const cartItemInput = document.querySelector(`[data-id="${currentId}"] input`)
+    cartItemInput.value = cartItem.quantity
 
-// const totalSum = document.querySelector('#total')
-// total += product.price
-// totalSum.innerHTML = 'total:' + total.toFixed(2)
+}
+
+// make a class for these methods
+
+// class CartView {
+
+// }
