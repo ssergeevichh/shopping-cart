@@ -1,3 +1,5 @@
+import { cart } from "./main"
+
 function addEventListenersToCart () {
     const modalOverlay = document.querySelector('.modal-overlay')
     const menuCartButton = document.querySelector('#cart')
@@ -22,11 +24,7 @@ function addEventListenersToCart () {
     })
 
     clearCart.addEventListener('click', function () {
-        const modalLI = document.querySelectorAll('#modalOL>li')
-
-        modalLI.forEach(item => {
-            return item.remove()
-        })
+        cart.clearCart()
     })
 
 

@@ -10,7 +10,13 @@ export class Cart {
   }
 
   clearCart() {
+    const modalLI = document.querySelectorAll('#modalOL>li')
 
+    modalLI.forEach(item => {
+        return item.remove()    
+    })
+
+    return this.cartItems = [];
   }
 
   addItem(product) {
