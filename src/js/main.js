@@ -3,8 +3,21 @@ import { Cart } from './cart/controller';
 import { createProductItem } from './helpers/index'
 import addEventListenersToCart from './modalHandler.js';
 import fetchProduct from './product.service.js';
+import faker from '@faker-js/faker';
 
-const url = 'https://fakestoreapi.com/products'
+// const arr = new Array(10).fill(null).map((value, index) => {
+// return {
+//     id: faker.internet.ip(),
+//     title: faker.commerce.productName(),
+//     description: faker.commerce.productDescription(),
+//     price: faker.commerce.price(),
+//     image: faker.image.fashion()
+// }
+// })
+// const productItems = JSON.stringify(arr, null, 2)
+// console.log(productItems);
+
+const url = 'https://lorem-json.herokuapp.com/api/piece/61f8fdde9f2781452ddf2531'
 const list = document.querySelector('.products')
 
 const cart = new Cart()

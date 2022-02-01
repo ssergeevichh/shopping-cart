@@ -4,7 +4,7 @@ function fetchProduct(url) {
             return resData.json()
         })
         .then(finalData => {
-            return finalData
+            return finalData.data
         })
 }
 
